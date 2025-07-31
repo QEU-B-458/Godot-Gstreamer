@@ -1,0 +1,9 @@
+.cache/*
+*.dblite
+demo/.godot/shader_cache/*
+demo/bin/linux/*
+/__pycache__
+.idea
+.sconsign.dblite
+*.import
+*.so
