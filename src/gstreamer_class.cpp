@@ -1,12 +1,12 @@
 #include "gstreamer_class.h"
 #include "gstreamer_helpers.h"
-extern "C"{
+
 #include <gst/gst.h>
 #include <gst/app/gstappsink.h>
 #include <gst/gstbuffer.h>
 #include <gst/gstbuffer.h>
 #include <gst/gstcaps.h>
-}
+
 
 
 void Gstreamer::_bind_methods() {
