@@ -45,6 +45,8 @@ env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
 env.Append(CPPPATH=["src/"])
 env.Append(LIBS=["gstreamer-1.0", "glib-2.0", "gobject-2.0", "gmodule-2.0"])
+env.Append(CXXFLAGS=['-fPIC'])
+
 
 sources = Glob("src/*.cpp")
 if env["target"] in ["editor", "template_debug"]:
