@@ -3,8 +3,7 @@
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
-
-#include "godot_gstreamer.h"
+#include "godot_gstreamer/godot_gstreamer.h"
 
 using namespace godot;
 

@@ -7,7 +7,6 @@ extern "C" {
 #pragma once
 #include <glib.h>
 #include <boost/array.hpp>
-//#include "gst_umapstore.h"
 #include "godot_cpp/classes/ref_counted.hpp"
 #include "godot_cpp/classes/wrapped.hpp"
 #include <godot_cpp/classes/object.hpp>

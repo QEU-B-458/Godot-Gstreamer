@@ -6,7 +6,7 @@ extern "C"{
 #include <gst/app/gstappsink.h>
 #include <gst/app/gstappsrc.h>
 }
-#include "../godot_gstreamer.h"
+#include "godot_gstreamer.h"
 //#include "gst_umapstore.h"
 #include <godot_cpp/classes/rendering_server.hpp>
 #include <memory>

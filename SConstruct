@@ -32,7 +32,7 @@ env = Environment(ENV=os.environ.copy())
 #env = localEnv.Clone()
 
 
-env.ParseConfig("pkg-config --cflags gstreamer-1.0")
+env.ParseConfig("pkg-config --cflags gstreamer-1.0 gstreamer-app-1.0")
 
 if not (os.path.isdir("godot-cpp") and os.listdir("godot-cpp")):
     print_error("""godot-cpp is not available within this folder, as Git submodules haven't been initialized.
@@ -45,7 +45,11 @@ env = SConscript("godot-cpp/SConstruct", {"env": env, "customs": customs})
 
 env.Append(CPPPATH=["src/"])
 env.Append(LIBS=["gstreamer-1.0", "glib-2.0", "gobject-2.0", "gmodule-2.0"])
-env.Append(CXXFLAGS=['-fPIC'])
+#env.Append(CXXFLAGS=['-fPIC'])
+env.Append(LINKFLAGS=[
+    '/usr/lib/libgstapp-1.0.so',
+    '/usr/lib/libgstbase-1.0.so',
+])
 
 
 sources = Glob("src/*.cpp")
