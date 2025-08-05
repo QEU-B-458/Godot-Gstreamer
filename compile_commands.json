@@ -6018,12 +6018,6 @@
         "output": "godot-cpp/gen/src/variant/utility_functions.linux.template_debug.x86_64.o"
     },
     {
-        "command": "g++ -o src/example_class.os -c -fno-gnu-unique -std=c++17 -fno-exceptions -pthread -fPIC -Wwrite-strings -m64 -march=x86-64 -fvisibility=hidden -O2 -fPIC -DLINUX_ENABLED -DUNIX_ENABLED -DTHREADS_ENABLED -DHOT_RELOAD_ENABLED -DDEBUG_ENABLED -DNDEBUG -DGDEXTENSION -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -Igodot-cpp/gdextension -Igodot-cpp/include -Igodot-cpp/gen/include -Isrc src/example_class.cpp",
-        "directory": "/home/starblob/programming-projects/c++-projects/Godot-Gstreamer",
-        "file": "src/example_class.cpp",
-        "output": "src/example_class.os"
-    },
-    {
         "command": "g++ -o src/register_types.os -c -fno-gnu-unique -std=c++17 -fno-exceptions -pthread -fPIC -Wwrite-strings -m64 -march=x86-64 -fvisibility=hidden -O2 -fPIC -DLINUX_ENABLED -DUNIX_ENABLED -DTHREADS_ENABLED -DHOT_RELOAD_ENABLED -DDEBUG_ENABLED -DNDEBUG -DGDEXTENSION -I/usr/include/gstreamer-1.0 -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -Igodot-cpp/gdextension -Igodot-cpp/include -Igodot-cpp/gen/include -Isrc src/register_types.cpp",
         "directory": "/home/starblob/programming-projects/c++-projects/Godot-Gstreamer",
         "file": "src/register_types.cpp",
