@@ -1,7 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="scons compile database" type="CLionExternalRunConfiguration" factoryName="Application" PROGRAM_PARAMS="compiledb=yes" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="true" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Godot-Gstreamer" TARGET_NAME="scons" CONFIG_NAME="scons" RUN_PATH="/bin/scons">
-    <method v="2">
-      <option name="RunConfigurationTask" enabled="true" run_configuration_name="scons build" run_configuration_type="CLionExternalRunConfiguration" />
-    </method>
-  </configuration>
-</component>

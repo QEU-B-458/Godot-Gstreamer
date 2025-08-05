@@ -19,7 +19,7 @@ localEnv = Environment(tools=["default"], PLATFORM="")
 # Modify the example file as needed and uncomment the line below or
 # manually specify the build_profile parameter when running SCons.
 
-localEnv["build_profile"] = "build_profile.json"
+#localEnv["build_profile"] = "build_profile.json"
 
 customs = ["custom.py"]
 customs = [os.path.abspath(path) for path in customs]
@@ -52,7 +52,11 @@ env.Append(LINKFLAGS=[
 ])
 
 
-sources = Glob("src/*.cpp")
+sources = []
+for dirpath, dirnames, filenames in os.walk("src"):
+    for file in filenames:
+        if file.endswith(".cpp"):
+            sources.append(os.path.join(dirpath, file))
 if env["target"] in ["editor", "template_debug"]:
     try:
         doc_data = env.GodotCPPDocData("src/gen/doc_data.gen.cpp", source=Glob("doc_classes/*.xml"))

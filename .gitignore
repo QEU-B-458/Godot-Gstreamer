@@ -1,9 +1,10 @@
 .cache/*
+.ccls-cache
 *.dblite
 demo/.godot/shader_cache/*
 demo/bin/linux/*
 /__pycache__
-.idea
+.vscode/settings.json
 .sconsign.dblite
 *.import
 *.so

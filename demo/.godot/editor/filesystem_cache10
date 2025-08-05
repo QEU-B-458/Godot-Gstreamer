@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1754051646
-example.gd::GDScript/GDScript::218888576828779243::1754050449::0::1::::<>Node<><>0<>0<><>::
-example.tscn::PackedScene/PackedScene::7703061284584832964::1754050455::0::1::::<><><>0<>0<><>::uid://debcexpjklnf::::res://example.gd
-icon.svg::CompressedTexture2D/CompressedTexture2D::1538811458718470165::1750254586::1753996561::1::::<><><>0<>0<>c4f64a37d8aab3afef87b511360a596e<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://bin/::1753944421
-example.gdextension::GDExtension/GDExtension::6381054939423058557::1753944633::0::1::::<><><>0<>0<><>::
-::res://bin/linux/::1754051637
+::res://::1754389985
+example.gd::GDScript/GDScript::218888576828779243::1754389554::0::1::::<>Node<><>0<>0<><>::
+example.tscn::PackedScene::7703061284584832964::1754389829::0::1::::<><><>0<>0<><>::uid://debcexpjklnf::::res://example.gd
+icon.svg::CompressedTexture2D/CompressedTexture2D::2248004352688930629::1754199497::1754200880::1::::<><><>0<>0<>cb7027920f17b5beb774e6c59c7f70f5<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://bin/::1754200831
+example.gdextension::GDExtension/GDExtension::6381054939423058557::1754380200::0::1::::<><><>0<>0<><>::
+::res://bin/linux/::1754389976
