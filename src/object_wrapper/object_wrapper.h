@@ -20,44 +20,49 @@ using namespace godot;
 class ObjectWrapper : public Object {
     GDCLASS(ObjectWrapper, Object)
 
-public:
-    using ObjectWrapperSharedPtr = std::shared_ptr<GstElement>;
-
-private:
-    ObjectWrapperSharedPtr element;
-
-    struct GoObjectDeleter {
-        void operator()(GstElement* element) const {
-            if (element) {
-                print_line("Godot-cpp: Unreferencing GstElement.");
-                gst_object_unref(element);
-            }
-        }
-    };
-
 protected:
     static void _bind_methods();
+public:
+    std::shared_ptr<GstObject> dynamic;
+    
+    
 
 public:
-	GstElement* get_element() const { return element.get(); }
-    static ObjectWrapper* create(GstElement* element) {
-        ObjectWrapper* wrapper = memnew(ObjectWrapper());
+    //GstElementFactory* elem = a_variant->ObjectWrapper::get_as<GstElementFactory>();
+    template<typename T>
+    static ObjectWrapper* createDynamic(T* element) {
+            ObjectWrapper* wrapper = memnew(ObjectWrapper());
 
         if (element) {
-            wrapper->element = ObjectWrapperSharedPtr(element, GoObjectDeleter());
-            print_line("Godot-cpp: GstElementWrapper created with GstElement.");
-        } else {
-            print_error("Godot-cpp: Failed to create GstElementWrapper with null element.");
-        }
-
-        return wrapper;
+             // T must inherit from GstObject
+            wrapper->dynamic = std::shared_ptr<GstObject>(
+            reinterpret_cast<GstObject*>(element),
+            [](GstObject* e) {
+                if (e) {
+                    print_line("Godot-cpp: Unreferencing dynamic GstObject.");
+                    gst_object_unref(e);
+                }
+            }
+        );
+    } else {
+        print_error("Godot-cpp: Failed to create wrapper with null element.");
     }
-	
+
+    return wrapper;
+}
+
+template<typename T>
+T* get_as() const {
+    return reinterpret_cast<T*>(dynamic.get());
+}
+
+
+
+
     ObjectWrapper() = default;
     ~ObjectWrapper() override = default;
-
-	String get_name(ObjectWrapper* wrapper);
+    
+    String get_dynamicName(ObjectWrapper* wrapper);
 
 
 };
-

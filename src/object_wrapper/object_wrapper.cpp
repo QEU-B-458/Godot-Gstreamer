@@ -15,14 +15,17 @@ extern "C"{
 
 void ObjectWrapper::_bind_methods()
 {
-	godot::ClassDB::bind_method(D_METHOD("get_name", "ObjectWrapper"), &ObjectWrapper::get_name);
+    godot::ClassDB::bind_method(D_METHOD("get_dynamicName", "ObjectWrapper"), &ObjectWrapper::get_dynamicName);
 }
 
-String ObjectWrapper::get_name(ObjectWrapper* wrapper) {
-    if (wrapper && wrapper->element) {
-        GstElement* elem = wrapper->element.get();  // Accessing the element of the passed-in wrapper
+
+String ObjectWrapper::get_dynamicName(ObjectWrapper* wrapper){
+    if (wrapper && wrapper->dynamic) {
+        GstElement* elem = reinterpret_cast<GstElement*>(wrapper->dynamic.get());  // Accessing the element of the passed-in wrapper
         const char* name = GST_OBJECT_NAME(elem);
         return String(name);
     }
     return "NULL_ELEMENT";
 }
+
+

@@ -1,0 +1,61 @@
+/*
+//#############################################################################################################
+    //std::shared_ptr<GstElement> element;
+    //auto* elementfactory = a_variant->element.get();
+    //GstElement* get_element() const { return element.get(); }
+    static ObjectWrapper* createElement(GstElement* element) {
+        ObjectWrapper* wrapper = memnew(ObjectWrapper());
+
+        if (element) {
+          wrapper->element = std::shared_ptr<GstElement>(element, [](GstElement* e) {
+                if (e) {print_line("Godot-cpp: Unreferencing GstElement.");
+                        gst_object_unref(e);}});
+        } else {
+            print_error("Godot-cpp: Failed to create GstElementWrapper with null element.");
+        }
+
+        return wrapper;
+    }
+*/
+
+/*
+String ObjectWrapper::get_elementName(ObjectWrapper* wrapper) {
+    if (wrapper && wrapper->element) {
+        GstElement* elem = wrapper->element.get();  // Accessing the element of the passed-in wrapper
+        const char* name = GST_OBJECT_NAME(elem);
+        return String(name);
+    }
+    return "NULL_ELEMENT";
+}
+*/
+
+/*
+//##############################################################################################################
+    //std::shared_ptr<GstElementFactory> factory;
+    //auto* elementfactory = a_variant->factory.get();
+    //GstElement* get_element() const { return element.get(); }
+    static ObjectWrapper* createfactory(GstElementFactory* element) {
+        ObjectWrapper* wrapper = memnew(ObjectWrapper());
+
+        if (element) {
+          wrapper->factory = std::shared_ptr<GstElementFactory>(element, [](GstElementFactory* e) {
+                if (e) {print_line("Godot-cpp: Unreferencing GstElement.");
+                        gst_object_unref(e);}});
+        } else {
+            print_error("Godot-cpp: Failed to create GstElementWrapper with null element.");
+        }
+
+        return wrapper;
+    }
+*/
+
+/*
+String ObjectWrapper::get_factoryName(ObjectWrapper* wrapper) {
+    if (wrapper && wrapper->factory) {
+        GstElementFactory* elem = wrapper->factory.get();  // Accessing the element of the passed-in wrapper
+        const char* name = GST_OBJECT_NAME(elem);
+        return String(name);
+    }
+    return "NULL_ELEMENT";
+}
+*/

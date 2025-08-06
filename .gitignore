@@ -4,6 +4,7 @@
 demo/.godot/shader_cache/*
 demo/bin/linux/*
 /__pycache__
+compile_commands.json
 .vscode/settings.json
 .sconsign.dblite
 *.import
